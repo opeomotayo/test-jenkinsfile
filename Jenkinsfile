@@ -1,14 +1,14 @@
 pipeline {
   environment {
-    imagename = "yenigul/hacicenkins"
-    registryCredential = 'yenigul-dockerhub'
+    imagename = "opeomotayo/jenkinsfile-test"
+    registryCredential = 'dockerhub-test'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
- //       git([url: 'https://github.com/ismailyenigul/hacicenkins.git', branch: 'master', credentialsId: 'ismailyenigul-github-user-token'])
+ //       git([url: 'https://github.com/opeomotayo/test-jenkinsfile.git', branch: 'master', credentialsId: 'ismailyenigul-github-user-token'])
  	checkout scm
 
       }
@@ -16,7 +16,7 @@ pipeline {
     stage('Building image') {
       steps{
      
-      sh "echo AWSKEY && sleep 10"
+      sh "echo Hey Jenkinsfile && sleep 10"
 
 
           }
